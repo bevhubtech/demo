@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Font Awesome CDN for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glowbyte Hub - Website Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://api.iconify.design/mdi/web.svg?color=%2300bfff" type="image/svg+xml">
+
+
+
+<style>
+.contact-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+    min-height: auto;         /* Don't force a full-height section */
+  padding: 40px 20px;       /* You can even reduce to 20px if needed */
+  background: transparent;
+  margin: 0;                /* Remove any default margin */
+}
+
+.form-container {
+  background: #0f172a;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.form-container button:hover {
+  background: #1d4ed8;
+}
+
+
+
+.form-success {
+  color: green;
+  margin-top: 10px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #25D366; /* WhatsApp green, but works for all unless individually styled */
+  transform: scale(1.3) rotate(5deg);
+  text-shadow: 0 0 8px rgba(37, 211, 102, 0.7);
+}
+
+
+.social-links a {
+  text-decoration: none;
+  color: white; /* adjust as needed */
+  font-size: 26px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #25D366; /* WhatsApp green on hover or choose your brand color */
+  transform: scale(1.2);
+}
+
+
+.social-links a {
+  text-decoration: none;
+  color: white; /* Adjust color to match your theme */
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00acee; /* Highlight color on hover */
+  transform: scale(1.2);
+}
+
+
+.social-links a {
+  text-decoration: none;
+  color: white; /* or your preferred color */
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff0077; /* pink-ish for hover, change if you want */
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background Image with Overlay */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: 
+        linear-gradient(rgba(15, 32, 39, 0.85), rgba(44, 83, 100, 0.85)), /* dark overlay */
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+
+   header {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+  color: #00bfff;
+  text-align: center;
+  padding: 60px 20px 30px;
+  box-shadow: 0 0 25px #00bfff;
+  border-bottom: 1px solid #00bfff33;
+  overflow: hidden;
+}
+
+/* Dark overlay on header background for readability */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+/* Make sure header text appears above overlay */
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+  color: #00bfff;
+}
+
+    
+
+    header h1 {
+      font-size: 3em;
+      color: #00bfff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 6px rgba(0, 191, 255, 0.8);
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #b3e0ff;
+      text-shadow: 0 0 4px rgba(179, 224, 255, 0.7);
+    }
+
+    main {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 2em;
+      color: #00bfff;
+      margin-bottom: 25px;
+      border-left: 5px solid #00bfff;
+      padding-left: 15px;
+      text-shadow: 0 0 5px rgba(0, 191, 255, 0.7);
+    }
+
+    .example-website {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 15px;
+      border-left: 4px solid #00bfff;
+      box-shadow: 0 4px 20px rgba(0, 191, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .example-website:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 191, 255, 0.35);
+    }
+
+    .example-website h3 {
+      margin-top: 0;
+      color: #00d4ff;
+      font-size: 1.5em;
+      text-shadow: 0 0 4px rgba(0, 212, 255, 0.8);
+    }
+
+    .example-website p, ul {
+      color: #d1e9ff;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-shadow: 0 0 3px rgba(209, 233, 255, 0.8);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 10px;         /* Reduce top space between contact & footer */
+  padding: 10px;
+      background: #000c18cc; /* slightly transparent for layering */
+      color: #70cfff;
+      font-size: 0.9em;
+      border-top: 1px solid #00bfff33;
+      text-shadow: 0 0 3px rgba(112, 207, 255, 0.9);
+    }
+
+    a {
+      color: #00bfff;
+      text-decoration: none;
+      text-shadow: 0 0 4px rgba(0, 191, 255, 0.9);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floating Call Button */
+    .call-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #00bfff;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(0, 191, 255, 0.3);
+      font-weight: bold;
+      font-size: 0.9em;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+      text-shadow: 0 0 6px rgba(0, 191, 255, 0.8);
+    }
+
+    .call-button:hover {
+      background: #009fd4;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      .section-title {
+        font-size: 1.5em;
+      }
+
+      .call-button {
+        padding: 12px 16px;
+        font-size: 0.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Glowbyte Hub</h1>
+  <p>We don’t just tell you we build websites — we show you.</p>
+</header>
+
+<main>
+  <section id="about">
+  <h2>About This Page</h2>
+  <p>
+    Welcome to this demo webpage, a digital creation by <strong>Glowbyte Hub</strong>, built to showcase our unmatched capability in web design, branding, and digital solutions. Every pixel, animation, and interaction on this site is intentional, demonstrating the precision and modern aesthetic we bring to every project.
+  </p>
+  <p>
+    Crafted using the latest HTML5, CSS3, and responsive design principles, this page reflects our commitment to performance, accessibility, and mobile-first design. From startup websites to enterprise-grade systems, we build scalable solutions tailored to your unique brand needs.
+  </p>
+  <p>
+    At Glowbyte Hub, we don’t just build websites, we create experiences. With a focus on clean design, blazing-fast loading speeds, and intuitive UX, our work helps brands stand out in today’s crowded digital landscape. Our services include web creation, debugging, hosting, graphic design, branding assets, and 24/7 client support.
+  </p>
+  <p>
+    Partner with us to bring your vision to life, with creativity, strategy, and code that speaks volumes.
+  </p>
+</section>
+
+
+  </section>
+
+  <section>
+    <h2 class="section-title">Website Example: Tech Startup Landing Page</h2>
+    <div class="example-website">
+      <h3>TechNova — Where Innovation Meets Execution</h3>
+      <p><strong>Overview:</strong> A sleek, modern homepage for a technology startup, focused on AI solutions.</p>
+      <p><strong>Features Included:</strong></p>
+      <ul>
+        <li>Hero section with bold CTA and company slogan</li>
+        <li>Services overview grid (AI Consulting, Custom ML Models, SaaS Integration)</li>
+        <li>Client testimonials carousel</li>
+        <li>Contact form integrated with Formspree</li>
+        <li>Sticky navigation with smooth scroll</li>
+        <li>Mobile-first responsive layout</li>
+      </ul>
+      
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Website Example: Personal Portfolio</h2>
+    <div class="example-website">
+      <h3>Glowbyte Client — Freelance Designer & Developer</h3>
+      <p><strong>Overview:</strong> A stylish one-page portfolio website for a creative freelancer to display work, attract clients, and stand out professionally.</p>
+      <p><strong>Features Included:</strong></p>
+      <ul>
+        <li>Hero section with personal photo, headline & tagline</li>
+        <li>Portfolio grid with project previews (modal view on click)</li>
+        <li>Services section with clean icons</li>
+        <li>Animated skills progress bars</li>
+        <li>Contact form with email integration</li>
+        <li>Sticky nav with smooth scrolling</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Ready for Your Website?</h2>
+    <p>
+      Whether you're launching a startup, showcasing your portfolio, or taking your business online, <strong>Glowbyte Hub</strong> will bring your vision to life with precision, creativity, and reliable support.
+    </p>
+    <p>
+      Reach out to us today at <a href="tel:+254796994862">+254 796 994 862</a>
+      or chat with us on <a href="https://wa.me/254796994862" target="_blank">WhatsApp</a>
+    </p>
+  </section>
+  <!-- Contact Form Section -->
+<section class="contact-section">
+  <div class="form-container">
+    <form id="contact-form" action="https://formspree.io/f/meokkvzd" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+  <p id="success-msg" style="display: none; color: green;">Message sent successfully!</p>
+</form>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const msg = document.getElementById('success-msg');
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(() => {
+      form.reset();
+      msg.style.display = "block";
+    }).catch(() => {
+      msg.innerText = "There was an error.";
+      msg.style.color = "red";
+      msg.style.display = "block";
+    });
+  });
+</script>
+
+  <p id="success-msg" style="display: none; color: green;">Message sent successfully!</p>
+</form>
+  </div>
+</section>
+
+
+
+
+</main>
+
+<footer>
+  <p>© 2025 Glowbyte Hub. Designed and built with passion by Bevon Odero.</p>
+</footer>
+<div class="social-links">
+  <a href="https://x.com/globytehub?s=21" target="_blank" aria-label="X (Twitter)">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+  <a href="https://instagram.com/globytehub" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/254796994862" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+
+
+
+<!-- Floating Button -->
+<a href="tel:+254796994862" class="call-button">📞 Let's Talk</a>
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('form-success');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      successMsg.style.display = 'block';
+      form.reset();
+    } else {
+      alert("There was an issue. Please try again later.");
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
